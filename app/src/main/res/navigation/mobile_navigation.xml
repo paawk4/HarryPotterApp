@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.paawk4.harrypotterapp.presentation.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_guide"
+        android:name="com.paawk4.harrypotterapp.presentation.guide.GuideFragment"
+        android:label="@string/title_guide"
+        tools:layout="@layout/fragment_guide" >
+        <action
+            android:id="@+id/action_navigation_guide_to_movieFragment"
+            app:destination="@id/movieFragment" />
+        <action
+            android:id="@+id/action_navigation_guide_to_bookFragment"
+            app:destination="@id/bookFragment" />
+        <action
+            android:id="@+id/action_navigation_guide_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.paawk4.harrypotterapp.presentation.movies.MoviesFragment"
+        android:label="fragment_movie_list"
+        tools:layout="@layout/fragment_movies" />
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="com.paawk4.harrypotterapp.presentation.books.BooksFragment"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_books" />
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.paawk4.harrypotterapp.presentation.characters.CharactersFragment"
+        android:label="fragment_characters"
+        tools:layout="@layout/fragment_characters" />
+
+</navigation>
