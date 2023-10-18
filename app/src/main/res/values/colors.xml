@@ -9,4 +9,9 @@
     <color name="bg_color">#FF242424</color>
     <color name="accent_gray">#FF464646</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="gryffindor_color">#FF5D0307</color>
+    <color name="slytherin_color">#FF054115</color>
+    <color name="ravenclaw_color">#FF07334A</color>
+    <color name="hufflepuff_color">#FFFFC900</color>
 </resources>

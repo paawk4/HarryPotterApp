@@ -24,7 +24,7 @@
         android:textSize="24sp"
         android:paddingTop="5dp"
         android:singleLine="false"
-        android:fontFamily="@font/harrypotterrussianversionofgfdtk"
+        android:fontFamily="@font/harry_potter_font"
         tools:text="Harry Potter and the Prisoner of Azkaban"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
