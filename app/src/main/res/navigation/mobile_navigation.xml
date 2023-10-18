@@ -17,28 +17,28 @@
         tools:layout="@layout/fragment_guide" >
         <action
             android:id="@+id/action_navigation_guide_to_movieFragment"
-            app:destination="@id/movieFragment" />
+            app:destination="@id/moviesFragment" />
         <action
             android:id="@+id/action_navigation_guide_to_bookFragment"
-            app:destination="@id/bookFragment" />
+            app:destination="@id/booksFragment" />
         <action
             android:id="@+id/action_navigation_guide_to_charactersFragment"
             app:destination="@id/charactersFragment" />
     </fragment>
     <fragment
-        android:id="@+id/movieFragment"
+        android:id="@+id/moviesFragment"
         android:name="com.paawk4.harrypotterapp.presentation.movies.MoviesFragment"
-        android:label="fragment_movie_list"
+        android:label="@string/title_movies"
         tools:layout="@layout/fragment_movies" />
     <fragment
-        android:id="@+id/bookFragment"
+        android:id="@+id/booksFragment"
         android:name="com.paawk4.harrypotterapp.presentation.books.BooksFragment"
-        android:label="fragment_book"
+        android:label="@string/title_books"
         tools:layout="@layout/fragment_books" />
     <fragment
         android:id="@+id/charactersFragment"
         android:name="com.paawk4.harrypotterapp.presentation.characters.CharactersFragment"
-        android:label="fragment_characters"
+        android:label="@string/title_characters"
         tools:layout="@layout/fragment_characters" />
 
 </navigation>

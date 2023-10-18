@@ -5,8 +5,8 @@
     android:id="@+id/books_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:paddingBottom="@dimen/bottom_nav_padding"
+    android:clipToPadding="false"
     app:layoutManager="LinearLayoutManager"
     tools:context=".presentation.books.BooksFragment"
     tools:listitem="@layout/item_book" />

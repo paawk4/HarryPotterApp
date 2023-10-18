@@ -3,18 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="10dp"
-    android:paddingVertical="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/book_image"
         android:layout_width="wrap_content"
         android:layout_height="225dp"
         android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:paddingEnd="20dp"
+        app:shapeAppearance="@style/CornerCut"
+        tools:src="@drawable/book_image"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/book_title"
@@ -24,6 +25,7 @@
         android:paddingTop="5dp"
         android:singleLine="false"
         android:fontFamily="@font/harrypotterrussianversionofgfdtk"
+        tools:text="Harry Potter and the Prisoner of Azkaban"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/book_image"/>
@@ -36,6 +38,7 @@
         android:alpha="0.7"
         android:singleLine="false"
         android:maxLines="3"
+        tools:text="When the Knight Bus crashes through the darkness and screeches to a halt in front of him..."
         app:layout_constraintTop_toBottomOf="@id/book_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/book_image"/>
@@ -47,6 +50,7 @@
         android:paddingTop="5dp"
         android:alpha="0.7"
         android:singleLine="false"
+        tools:text="8 July 1999"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/book_image"
         app:layout_constraintBottom_toBottomOf="parent"/>

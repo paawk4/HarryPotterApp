@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.com.fasterxml.jackson.core.JsonPointer.compile
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -76,4 +78,8 @@ dependencies {
     implementation("androidx.room:room-runtime:2.5.2")
     ksp("androidx.room:room-compiler:2.5.2")
     implementation("androidx.room:room-ktx:2.5.2")
+
+    //other
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
 }

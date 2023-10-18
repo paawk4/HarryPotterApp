@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.paawk4.harrypotterapp.R
 import com.paawk4.harrypotterapp.databinding.FragmentMoviesBinding
+import com.paawk4.harrypotterapp.presentation.utils.LinearItemDecorator
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MoviesFragment : Fragment() {
@@ -28,8 +30,16 @@ class MoviesFragment : Fragment() {
     private fun observeViewModel() {
         moviesViewModel.moviesList.observe(viewLifecycleOwner) {
             if (it.data != null) {
-                binding.moviesRecyclerView.layoutManager = LinearLayoutManager(context)
-                binding.moviesRecyclerView.adapter = MoviesAdapter(it.data!!)
+                with(binding.moviesRecyclerView) {
+                    layoutManager = LinearLayoutManager(context)
+                    adapter = MoviesAdapter(it.data!!)
+                    addItemDecoration(
+                        LinearItemDecorator(
+                            0,
+                            resources.getDimensionPixelSize(R.dimen.vertical_space_rv)
+                        )
+                    )
+                }
             }
         }
     }

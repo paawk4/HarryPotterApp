@@ -3,19 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="10dp"
-    android:paddingVertical="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/movie_poster"
         android:layout_width="wrap_content"
         android:layout_height="225dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/poster"
+        android:scaleType="centerCrop"
+        android:scaleX="1.3"
+        android:scaleY="1.3"
+        android:paddingEnd="20dp"
+        app:shapeAppearance="@style/CornerCut"
+        tools:src="@drawable/poster"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintStart_toStartOf="parent"/>
     
     <TextView
         android:id="@+id/movie_title"
@@ -25,7 +27,7 @@
         android:paddingTop="5dp"
         android:singleLine="false"
         android:fontFamily="@font/harrypotterrussianversionofgfdtk"
-        android:text="Harry Potter and the Philosopher's Stone"
+        tools:text="Harry Potter and the Philosopher's Stone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/movie_poster"/>
@@ -38,7 +40,7 @@
         android:alpha="0.7"
         android:singleLine="false"
         android:maxLines="3"
-        android:text="Harry Potter’s dull life is completely changed on his eleventh birthday when..."
+        tools:text="Harry Potter’s dull life is completely changed on his eleventh birthday when..."
         app:layout_constraintTop_toBottomOf="@id/movie_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/movie_poster"/>
@@ -50,7 +52,7 @@
         android:paddingTop="5dp"
         android:alpha="0.7"
         android:singleLine="false"
-        android:text="4 November 2001"
+        tools:text="4 November 2001"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/movie_poster"
         app:layout_constraintBottom_toBottomOf="parent"/>

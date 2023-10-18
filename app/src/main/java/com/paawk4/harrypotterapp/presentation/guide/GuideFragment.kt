@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.paawk4.harrypotterapp.R
 import com.paawk4.harrypotterapp.databinding.FragmentGuideBinding
-import com.paawk4.harrypotterapp.databinding.FragmentHomeBinding
 import com.paawk4.harrypotterapp.domain.guide.Guide
 
 class GuideFragment : Fragment() {
@@ -20,19 +19,19 @@ class GuideFragment : Fragment() {
     private val guideList = listOf(
         Guide(
             "Movies",
-            R.drawable.guide_bg
+            R.drawable.guide_movies
         ),
         Guide(
             "Spells",
-            R.drawable.guide_bg
+            R.drawable.guide_spells
         ),
         Guide(
             "Books",
-            R.drawable.guide_bg
+            R.drawable.guide_books
         ),
         Guide(
             "Characters",
-            R.drawable.guide_bg
+            R.drawable.guide_characters
         )
     )
 

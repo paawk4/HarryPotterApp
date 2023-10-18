@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/characters_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="16dp"
-    app:flow_horizontalAlign="center"
-    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-    tools:context=".presentation.characters.CharactersFragment"
-    tools:listitem="@layout/item_character" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.characters.CharactersFragment" >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/characters_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="@dimen/bottom_nav_padding"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_character"/>
+</LinearLayout>
+

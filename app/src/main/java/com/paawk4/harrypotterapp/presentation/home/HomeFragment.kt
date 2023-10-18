@@ -17,6 +17,7 @@ class HomeFragment : Fragment() {
 
     private val homeViewModel: HomeViewModel by viewModel()
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

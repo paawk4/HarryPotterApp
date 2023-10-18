@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
     tools:context=".presentation.guide.GuideFragment">
 
     <GridView
@@ -14,6 +13,8 @@
         android:numColumns="2"
         android:horizontalSpacing="13dp"
         android:verticalSpacing="13dp"
+        android:paddingBottom="@dimen/bottom_nav_padding"
+        android:clipToPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

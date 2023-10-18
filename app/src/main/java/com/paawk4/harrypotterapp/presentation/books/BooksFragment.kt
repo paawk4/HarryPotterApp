@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.paawk4.harrypotterapp.R
 import com.paawk4.harrypotterapp.databinding.FragmentBooksBinding
+import com.paawk4.harrypotterapp.presentation.utils.LinearItemDecorator
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BooksFragment : Fragment() {
@@ -28,8 +30,16 @@ class BooksFragment : Fragment() {
     private fun observeViewModel() {
         booksViewModel.booksList.observe(viewLifecycleOwner) {
             if (it.data != null) {
-                binding.booksRecyclerView.layoutManager = LinearLayoutManager(context)
-                binding.booksRecyclerView.adapter = BooksAdapter(it.data!!)
+                with(binding.booksRecyclerView) {
+                    layoutManager = LinearLayoutManager(context)
+                    adapter = BooksAdapter(it.data!!)
+                    addItemDecoration(
+                        LinearItemDecorator(
+                            0,
+                            resources.getDimensionPixelSize(R.dimen.vertical_space_rv)
+                        )
+                    )
+                }
             }
         }
     }

@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.paawk4.harrypotterapp.R
 import com.paawk4.harrypotterapp.databinding.FragmentCharactersBinding
+import com.paawk4.harrypotterapp.presentation.utils.GridItemDecorator
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CharactersFragment : Fragment() {
@@ -28,8 +30,17 @@ class CharactersFragment : Fragment() {
     private fun observeViewModel() {
         charactersViewModel.charactersList.observe(viewLifecycleOwner) {
             if (it.data != null) {
-                binding.charactersRecyclerView.layoutManager = GridLayoutManager(context, 2)
-                binding.charactersRecyclerView.adapter = CharactersAdapter(it.data!!)
+                with(binding.charactersRecyclerView) {
+                    layoutManager = GridLayoutManager(context, 2)
+                    adapter = CharactersAdapter(it.data!!)
+                    addItemDecoration(
+                        GridItemDecorator(
+                            resources.getDimensionPixelSize(R.dimen.horizontal_space_rv_grid),
+                            resources.getDimensionPixelSize(R.dimen.vertical_space_rv_grid),
+                            2
+                        )
+                    )
+                }
             }
         }
     }
