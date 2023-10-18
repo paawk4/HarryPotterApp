@@ -2,6 +2,8 @@ package com.paawk4.harrypotterapp.presentation.movies
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.paawk4.harrypotterapp.domain.characters.models.Character
+import com.paawk4.harrypotterapp.domain.movies.models.Movie
 import com.paawk4.harrypotterapp.domain.movies.models.Movies
 import com.paawk4.harrypotterapp.domain.movies.usecases.GetAllMoviesUseCase
 import com.paawk4.harrypotterapp.domain.utils.Data
@@ -14,8 +16,8 @@ import kotlinx.coroutines.withContext
 
 class MoviesViewModel(private val getAllMoviesUseCase: GetAllMoviesUseCase) : BaseViewModel() {
 
-    private var _moviesList: MutableLiveData<Data<Movies>> = MutableLiveData()
-    val moviesList: LiveData<Data<Movies>>
+    private var _moviesList: MutableLiveData<Data<List<Movie>>> = MutableLiveData()
+    val moviesList: LiveData<Data<List<Movie>>>
         get() {
             return _moviesList
         }

@@ -10,8 +10,7 @@ import coil.load
 import com.paawk4.harrypotterapp.databinding.ItemCharacterBinding
 import com.paawk4.harrypotterapp.domain.characters.models.Character
 
-class CharactersAdapter() :
-    ListAdapter<Character, CharactersAdapter.ViewHolder>(CharactersDiffCallback()) {
+class CharactersAdapter : ListAdapter<Character, CharactersAdapter.ViewHolder>(CharactersDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -32,10 +31,6 @@ class CharactersAdapter() :
     inner class ViewHolder(binding: ItemCharacterBinding) : RecyclerView.ViewHolder(binding.root) {
         val characterName: TextView = binding.characterItemTitle
         val characterImage: ImageView = binding.characterItemImage
-    }
-
-    companion object {
-        const val MAX_PULL_SIZE = 15
     }
 
 }

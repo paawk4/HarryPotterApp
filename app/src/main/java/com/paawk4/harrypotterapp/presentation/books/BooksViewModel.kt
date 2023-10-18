@@ -2,6 +2,7 @@ package com.paawk4.harrypotterapp.presentation.books
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.paawk4.harrypotterapp.domain.books.models.Book
 import com.paawk4.harrypotterapp.domain.books.models.Books
 import com.paawk4.harrypotterapp.domain.books.usecases.GetAllBooksUseCase
 import com.paawk4.harrypotterapp.domain.utils.Data
@@ -14,8 +15,8 @@ import kotlinx.coroutines.withContext
 
 class BooksViewModel(private val getAllBooksUseCase: GetAllBooksUseCase) : BaseViewModel() {
 
-    private var _booksList: MutableLiveData<Data<Books>> = MutableLiveData()
-    val booksList: LiveData<Data<Books>>
+    private var _booksList: MutableLiveData<Data<List<Book>>> = MutableLiveData()
+    val booksList: LiveData<Data<List<Book>>>
         get() {
             return _booksList
         }

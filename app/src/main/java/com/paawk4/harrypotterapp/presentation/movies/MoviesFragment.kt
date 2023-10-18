@@ -15,7 +15,7 @@ class MoviesFragment : Fragment() {
 
     private var _binding: FragmentMoviesBinding? = null
     private val binding get() = _binding!!
-
+    private lateinit var moviesAdapter: MoviesAdapter
     private val moviesViewModel: MoviesViewModel by viewModel()
 
     override fun onCreateView(
@@ -23,23 +23,29 @@ class MoviesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
+        setupRecyclerView()
         observeViewModel()
         return binding.root
     }
 
+    private fun setupRecyclerView() {
+        moviesAdapter = MoviesAdapter()
+        with(binding.moviesRecyclerView) {
+            layoutManager = LinearLayoutManager(context)
+            adapter = moviesAdapter
+            addItemDecoration(
+                LinearItemDecorator(
+                    0,
+                    resources.getDimensionPixelSize(R.dimen.vertical_space_rv)
+                )
+            )
+        }
+    }
+
     private fun observeViewModel() {
         moviesViewModel.moviesList.observe(viewLifecycleOwner) {
-            if (it.data != null) {
-                with(binding.moviesRecyclerView) {
-                    layoutManager = LinearLayoutManager(context)
-                    adapter = MoviesAdapter(it.data!!)
-                    addItemDecoration(
-                        LinearItemDecorator(
-                            0,
-                            resources.getDimensionPixelSize(R.dimen.vertical_space_rv)
-                        )
-                    )
-                }
+            it.data?.let { list ->
+                moviesAdapter.submitList(list)
             }
         }
     }
