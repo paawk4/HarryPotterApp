@@ -16,7 +16,7 @@ import com.paawk4.harrypotterapp.domain.spells.usecases.GetAllSpellsUseCase
 import com.paawk4.harrypotterapp.presentation.books.BooksViewModel
 import com.paawk4.harrypotterapp.presentation.characters.CharactersViewModel
 import com.paawk4.harrypotterapp.presentation.home.HomeViewModel
-import com.paawk4.harrypotterapp.presentation.movies.MoviesViewModel
+import com.paawk4.harrypotterapp.presentation.movies.list_movies.MoviesViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

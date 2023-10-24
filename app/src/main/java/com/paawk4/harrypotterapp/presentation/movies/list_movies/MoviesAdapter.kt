@@ -1,4 +1,4 @@
-package com.paawk4.harrypotterapp.presentation.movies
+package com.paawk4.harrypotterapp.presentation.movies.list_movies
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.paawk4.harrypotterapp.databinding.ItemMovieBinding
 import com.paawk4.harrypotterapp.domain.movies.models.Movie
 
@@ -28,7 +29,12 @@ class MoviesAdapter() :
         holder.movieTitle.text = item.title
         holder.movieDate.text = item.releaseDate
         holder.movieDescription.text = item.summary
-        holder.moviePoster.load(item.poster)
+        Glide.with(holder.itemView)
+            .load(item.poster)
+            .centerCrop()
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+            .into(holder.moviePoster)
+        holder.movieRunningTime.text = item.runningTime
     }
 
     inner class ViewHolder(binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -36,6 +42,7 @@ class MoviesAdapter() :
         val moviePoster: ImageView = binding.moviePoster
         val movieDate: TextView = binding.movieDate
         val movieDescription: TextView = binding.movieDescription
+        val movieRunningTime: TextView = binding.movieRunningTime
     }
 
 }

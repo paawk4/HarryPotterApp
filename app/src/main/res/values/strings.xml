@@ -7,4 +7,10 @@
     <string name="title_books">Books</string>
     <string name="title_characters">Characters</string>
     <string name="title_spells">Spells</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_text">Thank you for the greeting! In the mobile application you will find a lot of interesting information about Harry Potter. The application also offers the ability to view the covers of books that have been released in different countries and editions. We hope you enjoy using our app and learn even more about Harry Potter!</string>
+    <string name="start_welcome_text">Welcome</string>
+    <string name="btn_start_text">START</string>
+    <string name="start_exploring_text">Start exploring the world of Harry Potter right now!</string>
 </resources>

@@ -71,8 +71,10 @@ dependencies {
     // koin
     implementation ("io.insert-koin:koin-android:3.4.3")
 
-    // coil
-    implementation("io.coil-kt:coil:2.4.0")
+
+    //glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 
     // room
     implementation("androidx.room:room-runtime:2.5.2")

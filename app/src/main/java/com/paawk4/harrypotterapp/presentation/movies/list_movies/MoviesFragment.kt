@@ -1,4 +1,4 @@
-package com.paawk4.harrypotterapp.presentation.movies
+package com.paawk4.harrypotterapp.presentation.movies.list_movies
 
 import android.os.Bundle
 import android.view.LayoutInflater

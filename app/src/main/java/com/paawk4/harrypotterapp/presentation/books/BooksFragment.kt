@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.paawk4.harrypotterapp.R
 import com.paawk4.harrypotterapp.databinding.FragmentBooksBinding
-import com.paawk4.harrypotterapp.presentation.movies.MoviesAdapter
 import com.paawk4.harrypotterapp.presentation.utils.LinearItemDecorator
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

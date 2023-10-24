@@ -8,5 +8,5 @@
     android:paddingBottom="@dimen/bottom_nav_padding"
     android:clipToPadding="false"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".presentation.movies.MoviesFragment"
+    tools:context=".presentation.movies.list_movies.MoviesFragment"
     tools:listitem="@layout/item_movie" />

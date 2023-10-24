@@ -1,4 +1,4 @@
-package com.paawk4.harrypotterapp.presentation.movies
+package com.paawk4.harrypotterapp.presentation.movies.list_movies
 
 import androidx.recyclerview.widget.DiffUtil
 import com.paawk4.harrypotterapp.domain.movies.models.Movie

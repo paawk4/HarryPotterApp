@@ -4,11 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.paawk4.harrypotterapp.databinding.ItemBookBinding
 import com.paawk4.harrypotterapp.domain.books.models.Book
-import androidx.recyclerview.widget.ListAdapter
 
 class BooksAdapter : ListAdapter<Book, BooksAdapter.ViewHolder>(BooksDiffCallback()) {
 
@@ -27,7 +28,11 @@ class BooksAdapter : ListAdapter<Book, BooksAdapter.ViewHolder>(BooksDiffCallbac
         holder.bookTitle.text = item.title
         holder.bookDate.text = item.releaseDate
         holder.bookDescription.text = item.summary
-        holder.bookImage.load(item.cover)
+        Glide.with(holder.itemView)
+            .load(item.cover)
+            .centerCrop()
+            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+            .into(holder.bookImage)
     }
 
     inner class ViewHolder(binding: ItemBookBinding) : RecyclerView.ViewHolder(binding.root) {
