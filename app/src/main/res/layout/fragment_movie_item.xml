@@ -1,69 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".presentation.movies.movie_item.MovieItemFragment">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/movie_item_poster"
-        android:layout_width="match_parent"
-        android:layout_height="340dp"
-        android:adjustViewBounds="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearance="@style/CornerCut"
-        tools:src="@drawable/poster" />
-
-    <TextView
-        android:id="@+id/movie_title"
-        style="@style/SmallTitleTextStyle"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/movie_poster"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Harry Potter and the Philosopher's Stone" />
+        android:paddingBottom="@dimen/bottom_nav_padding"
+        android:clipToPadding="false">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
 
-        android:columnCount="2">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv_poster"
+            android:layout_width="0dp"
+            android:layout_height="340dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/CornerCut"
+            tools:src="@drawable/poster" />
 
         <TextView
+            android:id="@+id/tv_title"
+            style="@style/SmallTitleTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/siv_poster"
+            tools:text="Harry Potter and the Philosopher's Stone" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:constraint_referenced_ids="tv_date, tv_directors, tv_running_time, tv_rating"
+            app:flow_horizontalStyle="spread"
+            app:flow_wrapMode="aligned"
+            app:layout_constraintEnd_toStartOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_date"
             style="@style/DescriptionTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="4 November 2001" />
 
         <TextView
+            android:id="@+id/tv_directors"
             style="@style/DescriptionTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="176dp"
+            tools:layout_editor_absoluteY="65dp"
             tools:text="Directors: Chris Columbus" />
 
         <TextView
+            android:id="@+id/tv_running_time"
             style="@style/DescriptionTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
             tools:text="152 minutes" />
 
         <TextView
+            android:id="@+id/tv_rating"
             style="@style/DescriptionTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
             tools:text="Rating: PG" />
-    </GridLayout>
 
-    <TextView
-        style="@style/DescriptionTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Harry Potter’s dull life is completely changed on his eleventh birthday when a mysterious letter addressed to him arrives in the mail. After finding out about his real parents and a whole hidden wizarding world, he goes on to Hogwarts.... Read more" />
+        <TextView
+            android:id="@+id/tv_description"
+            android:fontFamily="@font/montserrat_regular"
+            android:lineHeight="18sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/flow_group"
+            tools:text="Harry Potter’s dull life is completely changed on his eleventh birthday when a mysterious letter addressed to him arrives in the mail. After finding out about his real parents and a whole hidden wizarding world, he goes on to Hogwarts..." />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_read_more"
+            style="@style/DescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/read_more_text"
+            android:textColor="@color/cian"
+            app:layout_constraintEnd_toStartOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+        <TextView
+            android:id="@+id/tv_other_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/other_information_text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_read_more" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</ScrollView>

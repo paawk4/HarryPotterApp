@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.paawk4.harrypotterapp.R
 import com.paawk4.harrypotterapp.databinding.FragmentMoviesBinding
@@ -39,6 +40,11 @@ class MoviesFragment : Fragment() {
                     resources.getDimensionPixelSize(R.dimen.vertical_space_rv)
                 )
             )
+        }
+        moviesAdapter.onMovieItemClickListener = {
+            val bundle = Bundle()
+            bundle.putString("movieId", it.serial)
+            findNavController().navigate(R.id.action_moviesFragment_to_movieItemFragment, bundle)
         }
     }
 

@@ -14,6 +14,8 @@ import com.paawk4.harrypotterapp.domain.movies.models.Movie
 class MoviesAdapter() :
     ListAdapter<Movie, MoviesAdapter.ViewHolder>(MoviesDiffCallback()) {
 
+    var onMovieItemClickListener: ((Movie) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemMovieBinding.inflate(
@@ -35,6 +37,7 @@ class MoviesAdapter() :
             .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
             .into(holder.moviePoster)
         holder.movieRunningTime.text = item.runningTime
+        holder.itemView.setOnClickListener { onMovieItemClickListener?.invoke(item) }
     }
 
     inner class ViewHolder(binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {

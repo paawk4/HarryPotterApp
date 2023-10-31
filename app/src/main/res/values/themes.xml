@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.HarryPotterApp" parent="Theme.AppCompat">
         <!-- Primary brand color. -->
@@ -27,7 +27,7 @@
         <item name="cornerSizeBottomLeft">20%</item>
         <item name="cornerSizeBottomRight">20%</item>
     </style>
-    
+
     <style name="FilterTextStyle" parent="">
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">16sp</item>

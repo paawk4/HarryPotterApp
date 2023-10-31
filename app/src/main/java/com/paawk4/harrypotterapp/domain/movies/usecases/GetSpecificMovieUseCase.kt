@@ -4,7 +4,7 @@ import com.paawk4.harrypotterapp.domain.movies.MoviesRepository
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-class GetAllMoviesUseCase : KoinComponent {
+class GetSpecificMovieUseCase: KoinComponent {
     private val moviesRepository: MoviesRepository by inject()
-    operator fun invoke() = moviesRepository.getAllMovies()
+    operator fun invoke(boardId: String) = moviesRepository.getSpecificMovie(boardId)
 }

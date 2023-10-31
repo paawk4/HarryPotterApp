@@ -6,12 +6,12 @@
     app:startDestination="@id/startFragment">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigationHome"
         android:name="com.paawk4.harrypotterapp.presentation.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/navigation_guide"
+        android:id="@+id/navigationGuide"
         android:name="com.paawk4.harrypotterapp.presentation.guide.GuideFragment"
         android:label="@string/title_guide"
         tools:layout="@layout/fragment_guide">
@@ -29,7 +29,11 @@
         android:id="@+id/moviesFragment"
         android:name="com.paawk4.harrypotterapp.presentation.movies.list_movies.MoviesFragment"
         android:label="@string/title_movies"
-        tools:layout="@layout/fragment_movies" />
+        tools:layout="@layout/fragment_movies" >
+        <action
+            android:id="@+id/action_moviesFragment_to_movieItemFragment"
+            app:destination="@id/movieItemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/booksFragment"
         android:name="com.paawk4.harrypotterapp.presentation.books.BooksFragment"
@@ -47,8 +51,16 @@
         tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_startFragment_to_navigation_home"
-            app:destination="@id/navigation_home"
+            app:destination="@id/navigationHome"
             app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieItemFragment"
+        android:name="com.paawk4.harrypotterapp.presentation.movies.movie_item.MovieItemFragment"
+        tools:layout="@layout/fragment_movie_item">
+        <argument
+            android:name="movieId"
+            app:argType="string" />
     </fragment>
 
 </navigation>

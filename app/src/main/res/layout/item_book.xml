@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <TextView
         android:id="@+id/book_title"
         android:layout_width="0dp"
@@ -24,6 +25,7 @@
         android:paddingTop="5dp"
         style="@style/SmallTitleTextStyle"
         tools:text="Harry Potter and the Prisoner of Azkaban"
+        app:layout_constrainedWidth="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/book_image"/>
@@ -35,6 +37,7 @@
         android:paddingTop="5dp"
         style="@style/DescriptionTextStyle"
         android:maxLines="3"
+        app:layout_constrainedWidth="true"
         tools:text="When the Knight Bus crashes through the darkness and screeches to a halt in front of him..."
         app:layout_constraintTop_toBottomOf="@id/book_title"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +48,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
+        app:layout_constrainedWidth="true"
         style="@style/DescriptionTextStyle"
         tools:text="8 July 1999"
         app:layout_constraintEnd_toEndOf="parent"

@@ -13,4 +13,6 @@
     <string name="start_welcome_text">Welcome</string>
     <string name="btn_start_text">START</string>
     <string name="start_exploring_text">Start exploring the world of Harry Potter right now!</string>
+    <string name="read_more_text">Read more</string>
+    <string name="other_information_text">Other information</string>
 </resources>
