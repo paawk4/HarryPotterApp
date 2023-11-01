@@ -14,7 +14,7 @@ import com.paawk4.harrypotterapp.domain.movies.usecases.GetAllMoviesUseCase
 import com.paawk4.harrypotterapp.domain.movies.usecases.GetSpecificMovieUseCase
 import com.paawk4.harrypotterapp.domain.spells.SpellsRepository
 import com.paawk4.harrypotterapp.domain.spells.usecases.GetAllSpellsUseCase
-import com.paawk4.harrypotterapp.presentation.books.BooksViewModel
+import com.paawk4.harrypotterapp.presentation.books.list_books.BooksViewModel
 import com.paawk4.harrypotterapp.presentation.characters.CharactersViewModel
 import com.paawk4.harrypotterapp.presentation.home.HomeViewModel
 import com.paawk4.harrypotterapp.presentation.movies.list_movies.MoviesViewModel

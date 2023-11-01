@@ -1,4 +1,4 @@
-package com.paawk4.harrypotterapp.presentation.books
+package com.paawk4.harrypotterapp.presentation.books.list_books
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

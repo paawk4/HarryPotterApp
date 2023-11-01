@@ -1,4 +1,4 @@
-package com.paawk4.harrypotterapp.presentation.books
+package com.paawk4.harrypotterapp.presentation.books.list_books
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.movies.movie_item.MovieItemFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.books.book_item.BookItemFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_start"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_start"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_end"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="20dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_end"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/siv_poster"
@@ -53,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            app:constraint_referenced_ids="tv_date, tv_directors, tv_running_time, tv_rating"
+            app:constraint_referenced_ids="tv_author, tv_release_date, tv_pages"
             app:flow_horizontalStyle="spread"
             app:flow_wrapMode="aligned"
             app:layout_constraintEnd_toStartOf="@id/gl_end"
@@ -61,37 +62,29 @@
             app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
         <TextView
-            android:id="@+id/tv_date"
+            android:id="@+id/tv_author"
             style="@style/RegularTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="4 November 2001" />
+            tools:text="Joanne Rowling" />
 
         <TextView
-            android:id="@+id/tv_directors"
+            android:id="@+id/tv_release_date"
             style="@style/RegularTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="176dp"
             tools:layout_editor_absoluteY="65dp"
-            tools:text="Directors: Chris Columbus" />
+            tools:text="2 July 1998" />
 
         <TextView
-            android:id="@+id/tv_running_time"
+            android:id="@+id/tv_pages"
             style="@style/RegularTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints"
-            tools:text="152 minutes" />
-
-        <TextView
-            android:id="@+id/tv_rating"
-            style="@style/RegularTextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints"
-            tools:text="Rating: PG" />
+            tools:text="223 pages" />
 
         <TextView
             android:id="@+id/tv_description"
@@ -103,7 +96,7 @@
             app:layout_constraintEnd_toStartOf="@id/gl_end"
             app:layout_constraintStart_toEndOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/flow_group"
-            tools:text="Harry Potter’s dull life is completely changed on his eleventh birthday when a mysterious letter addressed to him arrives in the mail. After finding out about his real parents and a whole hidden wizarding world, he goes on to Hogwarts..." />
+            tools:text="Harry Potter has never even heard of Hogwarts when the letters start dropping on the doormat at number four, Privet.." />
 
         <TextView
             android:id="@+id/tv_read_more"
@@ -140,8 +133,7 @@
             app:layout_constraintStart_toEndOf="@id/gl_start"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_other_info_label"
-            tools:text="screen writers: Steve Kloves \nproducers: Chris Columbus, David Heyman, Mark Radcliffe \ncinematographers: John Seale \neditors: Richard Francis-Bruce \ndistributors: Warner Bros. Pictures \nmusic composers: John Williams,Conrad Pope \nbudget: $125 million \nbox office: $1.018 million" />
-
+            tools:text="dedication: For Jessica, who loves stories, for Anne, who loved them too, and for Di, who heard this one first."/>
         <ImageView
             android:id="@+id/iv_wiki"
             android:layout_width="wrap_content"
@@ -151,7 +143,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toEndOf="@id/tv_other_info" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
