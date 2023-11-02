@@ -9,7 +9,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.paawk4.harrypotterapp.R
 import com.paawk4.harrypotterapp.databinding.FragmentMoviesBinding
+import com.paawk4.harrypotterapp.domain.utils.Status
 import com.paawk4.harrypotterapp.presentation.utils.LinearItemDecorator
+import com.paawk4.harrypotterapp.presentation.utils.ProgressDialogManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MoviesFragment : Fragment() {
@@ -50,8 +52,15 @@ class MoviesFragment : Fragment() {
 
     private fun observeViewModel() {
         moviesViewModel.moviesList.observe(viewLifecycleOwner) {
-            it.data?.let { list ->
-                moviesAdapter.submitList(list)
+            when(it.responseType) {
+                Status.LOADING -> ProgressDialogManager.showProgressDialog(requireActivity())
+                Status.ERROR -> { ProgressDialogManager.hideProgressDialog() }
+                Status.SUCCESSFUL -> {
+                    it.data?.let { list ->
+                        moviesAdapter.submitList(list)
+                    }
+                    ProgressDialogManager.hideProgressDialog()
+                }
             }
         }
     }

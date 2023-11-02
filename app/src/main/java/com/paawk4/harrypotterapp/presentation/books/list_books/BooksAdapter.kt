@@ -13,6 +13,8 @@ import com.paawk4.harrypotterapp.domain.books.models.Book
 
 class BooksAdapter : ListAdapter<Book, BooksAdapter.ViewHolder>(BooksDiffCallback()) {
 
+    var onBookItemClickListener: ((Book) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemBookBinding.inflate(
@@ -33,6 +35,7 @@ class BooksAdapter : ListAdapter<Book, BooksAdapter.ViewHolder>(BooksDiffCallbac
             .centerCrop()
             .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
             .into(holder.bookImage)
+        holder.itemView.setOnClickListener { onBookItemClickListener?.invoke(item) }
     }
 
     inner class ViewHolder(binding: ItemBookBinding) : RecyclerView.ViewHolder(binding.root) {

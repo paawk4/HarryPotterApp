@@ -9,7 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.paawk4.harrypotterapp.databinding.FragmentMovieItemBinding
 import com.paawk4.harrypotterapp.domain.movies.models.Movie
+import com.paawk4.harrypotterapp.domain.utils.Status
 import com.paawk4.harrypotterapp.presentation.MainActivity
+import com.paawk4.harrypotterapp.presentation.utils.ProgressDialogManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieItemFragment : Fragment() {
@@ -45,8 +47,15 @@ class MovieItemFragment : Fragment() {
 
     private fun observeViewModel() {
         movieItemViewModel.movieItem.observe(viewLifecycleOwner) {
-            it.data?.let { item ->
-                populateDataOnUi(item)
+            when(it.responseType) {
+                Status.LOADING -> ProgressDialogManager.showProgressDialog(requireActivity())
+                Status.ERROR -> { ProgressDialogManager.hideProgressDialog() }
+                Status.SUCCESSFUL -> {
+                    it.data?.let { item ->
+                        populateDataOnUi(item)
+                    }
+                    ProgressDialogManager.hideProgressDialog()
+                }
             }
         }
     }

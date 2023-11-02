@@ -7,6 +7,7 @@ import com.paawk4.harrypotterapp.data.retrofit.RetrofitService
 import com.paawk4.harrypotterapp.data.spells.SpellsRepositoryImpl
 import com.paawk4.harrypotterapp.domain.books.BooksRepository
 import com.paawk4.harrypotterapp.domain.books.usecases.GetAllBooksUseCase
+import com.paawk4.harrypotterapp.domain.books.usecases.GetSpecificBookUseCase
 import com.paawk4.harrypotterapp.domain.characters.CharactersRepository
 import com.paawk4.harrypotterapp.domain.characters.usecases.GetAllCharactersUseCase
 import com.paawk4.harrypotterapp.domain.movies.MoviesRepository
@@ -14,6 +15,7 @@ import com.paawk4.harrypotterapp.domain.movies.usecases.GetAllMoviesUseCase
 import com.paawk4.harrypotterapp.domain.movies.usecases.GetSpecificMovieUseCase
 import com.paawk4.harrypotterapp.domain.spells.SpellsRepository
 import com.paawk4.harrypotterapp.domain.spells.usecases.GetAllSpellsUseCase
+import com.paawk4.harrypotterapp.presentation.books.book_item.BookItemViewModel
 import com.paawk4.harrypotterapp.presentation.books.list_books.BooksViewModel
 import com.paawk4.harrypotterapp.presentation.characters.CharactersViewModel
 import com.paawk4.harrypotterapp.presentation.home.HomeViewModel
@@ -36,10 +38,12 @@ val viewModelsModule = module {
     viewModel { BooksViewModel(get()) }
     viewModel { CharactersViewModel(get()) }
     viewModel { MovieItemViewModel(get()) }
+    viewModel { BookItemViewModel(get()) }
 }
 
 val useCasesModule = module {
     single { GetAllBooksUseCase() }
+    single { GetSpecificBookUseCase() }
     single { GetAllMoviesUseCase() }
     single { GetSpecificMovieUseCase() }
     single { GetAllSpellsUseCase() }
